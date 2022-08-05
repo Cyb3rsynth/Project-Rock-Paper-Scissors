@@ -13,47 +13,61 @@
 // Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 // Use a loop function to play the 5 rounds
 
-let computerPick = [{choice: 'Rock', value: 0}, {choice: 'Paper', value: 1}, {choice: 'Scissors', value: 2}];
+console.log("Rock-Paper-Scissors, Game!");
+
 let playerScore = 0;
 let compScore = 0;
-let playerChoice;
+let tieScore = 0;
+let playerChoice = getPlayerChoice();
+const computerSelection = getComputerChoice();
 
 
 
-// Function to randomly generate computer choices for game
+//Computer Play - This one is working and finalized now.
+function getComputerChoice() {
+  let randomNum = Math.floor(Math.random() * 3);
+  if (randomNum === 0) {
+    return ("Rock");
+  } else if (randomNum === 1) {
+    return ("Paper");
+  } else {
+    return ("Scissors");
+  }  
+}
+//getComputerChoice();
 
-function getComputerChoice () {
-    let result = computerPick[Math.floor(Math.random() * computerPick.length)];
-    //return result;
-    console.log (result);
+//Player Selection
+
+function getPlayerChoice() {
+  const gameInputs = ["Rock", "Paper", "Scissors".toLowerCase];
+  result = prompt("Choose Your Fighter!", );
+  return result;
+}
+
+
+//Play Round of Game Logic works within game and grabs input from player Choice
+function playRound(playerChoice, computerSelection) {
+
+  if (playerChoice === computerSelection) {
+    console.log ("It's a Draw!")
+  }
+  if (
+     (playerChoice === 'Rock' && computerSelection === 'Scissors') ||
+     (playerChoice === 'Paper' && computerSelection === 'Rock') ||
+     (playerChoice === 'Scissors' && computerSelection === 'Paper')
+  ) {
+  console.log("You Win!")
+  }
+  if (
+    (computerSelection === 'Rock' && playerChoice === 'Scissors') ||
+    (computerSelection === 'Paper' && playerChoice  === 'Rock') ||
+    (computerSelection === 'Scissors' && playerChoice  === 'Paper')
+ ) {
+ console.log("You Lose!")
+ }
   }
 
-getComputerChoice();
+//playRound();
 
-// Function to generate and a prompt and pick for player choice
-
-function getPlayerChoice () {
-     
-}
-getPlayerChoice();
-
-
-// Function to play a round of the game
-function playRound(playerSelection, computerSelection) {
-
- }
-
-  const playerSelection = getPlayerChoice();
-  const computerSelection = getComputerChoice();
-  //console.log(playRound(playerSelection, computerSelection));
-  
-
-
-
-
-
-
- 
-
-
+console.log(playRound(playerChoice, computerSelection));
 
