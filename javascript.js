@@ -13,13 +13,13 @@
 // Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 // Use a loop function to play the 5 rounds
 
-console.log("Rock-Paper-Scissors, Game!");
+console.log("Rock-Paper-Scissors! Test your might against the Computer!");
 
 let playerScore = 0;
 let compScore = 0;
-let tieScore = 0;
 let playerChoice = getPlayerChoice();
 const computerSelection = getComputerChoice();
+const gameInputs = ["Rock", "Paper", "Scissors"];
 
 
 
@@ -39,8 +39,7 @@ function getComputerChoice() {
 //Player Selection
 
 function getPlayerChoice() {
-  const gameInputs = ["Rock", "Paper", "Scissors".toLowerCase];
-  result = prompt("Choose Your Fighter!", );
+  result = prompt("Choose Your Fighter!");
   return result;
 }
 
@@ -49,6 +48,7 @@ function getPlayerChoice() {
 function playRound(playerChoice, computerSelection) {
 
   if (playerChoice === computerSelection) {
+    //return ('tie');
     console.log ("It's a Draw!")
   }
   if (
@@ -56,6 +56,8 @@ function playRound(playerChoice, computerSelection) {
      (playerChoice === 'Paper' && computerSelection === 'Rock') ||
      (playerChoice === 'Scissors' && computerSelection === 'Paper')
   ) {
+    playerScore++;
+    //return ('player');
   console.log("You Win!")
   }
   if (
@@ -63,11 +65,30 @@ function playRound(playerChoice, computerSelection) {
     (computerSelection === 'Paper' && playerChoice  === 'Rock') ||
     (computerSelection === 'Scissors' && playerChoice  === 'Paper')
  ) {
+  compScore++;
+  //return ('computer');
  console.log("You Lose!")
  }
+
+
   }
 
-//playRound();
-
 console.log(playRound(playerChoice, computerSelection));
+
+//Tested output from here and prior, codes works before game set up
+
+//From here I want to loop the play round 5 times and then output the winner to the console log on each round and a final winner at the end.
+function playGame() {
+
+  //if(playerScore === 5 || computerScore === 5) {
+// winner();
+
+}
+
+
+//function to show game winner and display final results to console log
+function gameWinner() {
+
+
+}
 
