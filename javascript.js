@@ -13,13 +13,13 @@
 // Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 // Use a loop function to play the 5 rounds
 
-console.log("Rock-Paper-Scissors! Test your might against the Computer!");
+console.log("Rock-Paper-Scissors! Test your might against the Computer! Best out of 5 games wins!");
 
 let playerScore = 0;
 let compScore = 0;
 let tieScore = 0;
-let playerChoice = getPlayerChoice();
-let computerSelection = getComputerChoice();
+const playerChoice = getPlayerChoice();
+const computerSelection = getComputerChoice();
 const gameInputs = ["Rock", "Paper", "Scissors"];
 
 
@@ -35,11 +35,9 @@ function getComputerChoice() {
   }  
 }
 
-//Function works for computer play
 
 //Player Selection
 
-// Add it back in later - troubleshooting
 function getPlayerChoice() {
 result = prompt("Choose Your Fighter!");
 return result;
@@ -48,14 +46,13 @@ return result;
 
 //Play Round of Game Logic works within game and grabs input from player Choice
 function playRound(playerChoice, computerSelection) {
-
+ 
   if (
      (playerChoice === 'Rock' && computerSelection === 'Scissors') ||
      (playerChoice === 'Paper' && computerSelection === 'Rock') ||
      (playerChoice === 'Scissors' && computerSelection === 'Paper')
   ) {
     playerScore++;
-  //console.log("You Win");
   }
   else if (
     (computerSelection === 'Rock' && playerChoice === 'Scissors') ||
@@ -63,7 +60,6 @@ function playRound(playerChoice, computerSelection) {
     (computerSelection === 'Scissors' && playerChoice  === 'Paper')
  ) {
   compScore++;
- //console.log("You Lose");
  }
  if (
   (computerSelection === 'Rock' && playerChoice === 'Rock') ||
@@ -71,7 +67,6 @@ function playRound(playerChoice, computerSelection) {
   (computerSelection === 'Scissors' && playerChoice  === 'Scissors')
  ) {
  tieScore++;
- //console.log ("It's a Draw!");
  }
 
  if (
@@ -86,7 +81,6 @@ function playRound(playerChoice, computerSelection) {
     {
     console.log(`You Won! ${playerChoice} beats ${computerSelection}.`);
     }
-
     if (
       (tieScore === 1) 
         )
@@ -94,34 +88,41 @@ function playRound(playerChoice, computerSelection) {
       console.log(`It's a draw, please try again! ${playerChoice} matches ${computerSelection}.`);
       }
 
-  //return (playerScore, compScore, tieScore);
+       //console.log (`You chose ${playerChoice} and the Computer chose ${computerSelection}.`);
 }
 
-playRound(playerChoice,computerSelection);
+//playRound(playerChoice,computerSelection);
 
 //Tested output from here and prior, codes works before game set up
 
+//function to show game winner and display final results to console log
+function gameWinner(playerScore, compScore) {
+  if(playerScore === compScore) {
+    console.log ("It's a draw");
+  } 
+  if(playerScore > compScore){
+    console.log ("Player is the Winner");
+  }
+  if(compScore > playerScore){
+    console.log ("Computer is the Winner");
+  }
+  }
+
 
 function playGame() {
-  for (let i = 0; i < 10; i++){
+  for (let i = 1; i < 5; i++) {
   }
+  playRound(playerChoice, computerSelection);
+  gameWinner(playerScore, compScore); 
+  return gameWinner;
+  
 }
-//playGame();
+playGame();
 
 
 
-//function to show game winner and display final results to console log
-function gameWinner() {
-if(playerScore === 5 || compScore === 5) {
-  return ("It's a draw");
-} 
-if(playerScore >= 5){
-  return ("Player is the Winner");
-}
-if(compScore >= 5){
-  return ("Computer is the Winner");
-}
-}
+
+
 
 
 
