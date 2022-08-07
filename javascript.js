@@ -35,17 +35,6 @@ function getComputerChoice() {
   }  
 }
 
-//function getPlayerChoice() {
-  //let randomNum = Math.floor(Math.random() * 3);
- // if (randomNum === 0) {
- //   return ("Rock");
- // } else if (randomNum === 1) {
-//    return ("Paper");
-//} else {
- //   return ("Scissors");
- // }  
-//}
-
 //Function works for computer play
 
 //Player Selection
@@ -66,10 +55,7 @@ function playRound(playerChoice, computerSelection) {
      (playerChoice === 'Scissors' && computerSelection === 'Paper')
   ) {
     playerScore++;
-    //return ('player');
-  //return ("You Win!");
-  console.log("You Win");
- 
+  //console.log("You Win");
   }
   else if (
     (computerSelection === 'Rock' && playerChoice === 'Scissors') ||
@@ -77,10 +63,7 @@ function playRound(playerChoice, computerSelection) {
     (computerSelection === 'Scissors' && playerChoice  === 'Paper')
  ) {
   compScore++;
-  //return ('computer');
- //return ("You Lose!");
- console.log("You Lose");
-
+ //console.log("You Lose");
  }
  if (
   (computerSelection === 'Rock' && playerChoice === 'Rock') ||
@@ -88,40 +71,57 @@ function playRound(playerChoice, computerSelection) {
   (computerSelection === 'Scissors' && playerChoice  === 'Scissors')
  ) {
  tieScore++;
- console.log ("It's a Draw!");
+ //console.log ("It's a Draw!");
  }
- return (playerScore, compScore);
+
+ if (
+  (compScore === 1) 
+    )
+  {
+  console.log(`Oh no, You lost! ${computerSelection} beats ${playerChoice}.`);
+  }
+  if (
+    (playerScore === 1) 
+      )
+    {
+    console.log(`You Won! ${playerChoice} beats ${computerSelection}.`);
+    }
+
+    if (
+      (tieScore === 1) 
+        )
+      {
+      console.log(`It's a draw, please try again! ${playerChoice} matches ${computerSelection}.`);
+      }
+
+  //return (playerScore, compScore, tieScore);
 }
-console.log (playRound(playerChoice, computerSelection));
+
+playRound(playerChoice,computerSelection);
 
 //Tested output from here and prior, codes works before game set up
 
-//From here I want to loop the play round 5 times and then output the winner to the console log on each round and a final winner at the end.
-//function playGame() {
-  //for (let i = 0; i < 10; i++){
-  //console.log(playerScore);
-  //let gameLoop = playRound(playerChoice, computerSelection);
-  //if(playerScore === 5 || compScore === 5) {
- // if(playerScore >= 5);{
- //   return ("Player is the Winner");
- // }
-  //if (compScore >= 5);{
- //   return ("Computer is the Winner");
- // }
- // }
-//}
-//console.log (playGame());
+
+function playGame() {
+  for (let i = 0; i < 10; i++){
+  }
+}
 //playGame();
+
 
 
 //function to show game winner and display final results to console log
 function gameWinner() {
-
-
+if(playerScore === 5 || compScore === 5) {
+  return ("It's a draw");
+} 
+if(playerScore >= 5){
+  return ("Player is the Winner");
+}
+if(compScore >= 5){
+  return ("Computer is the Winner");
+}
 }
 
- //return (playerScore);
- //This code should work for draw, revisit later
- //if (playerChoice === computerSelection) {
-  //return ('tie');
+
 
