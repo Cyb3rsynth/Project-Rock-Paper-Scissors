@@ -17,10 +17,10 @@ console.log("Rock-Paper-Scissors! Test your might against the Computer!");
 
 let playerScore = 0;
 let compScore = 0;
+let tieScore = 0;
 let playerChoice = getPlayerChoice();
-const computerSelection = getComputerChoice();
+let computerSelection = getComputerChoice();
 const gameInputs = ["Rock", "Paper", "Scissors"];
-
 
 
 //Computer Play - This one is working and finalized now.
@@ -34,23 +34,32 @@ function getComputerChoice() {
     return ("Scissors");
   }  
 }
-//getComputerChoice();
+
+//function getPlayerChoice() {
+  //let randomNum = Math.floor(Math.random() * 3);
+ // if (randomNum === 0) {
+ //   return ("Rock");
+ // } else if (randomNum === 1) {
+//    return ("Paper");
+//} else {
+ //   return ("Scissors");
+ // }  
+//}
+
+//Function works for computer play
 
 //Player Selection
 
+// Add it back in later - troubleshooting
 function getPlayerChoice() {
-  result = prompt("Choose Your Fighter!");
-  return result;
+result = prompt("Choose Your Fighter!");
+return result;
 }
-
+//Function works for player play
 
 //Play Round of Game Logic works within game and grabs input from player Choice
 function playRound(playerChoice, computerSelection) {
 
-  if (playerChoice === computerSelection) {
-    //return ('tie');
-    console.log ("It's a Draw!")
-  }
   if (
      (playerChoice === 'Rock' && computerSelection === 'Scissors') ||
      (playerChoice === 'Paper' && computerSelection === 'Rock') ||
@@ -58,32 +67,51 @@ function playRound(playerChoice, computerSelection) {
   ) {
     playerScore++;
     //return ('player');
-  console.log("You Win!")
+  //return ("You Win!");
+  console.log("You Win");
+ 
   }
-  if (
+  else if (
     (computerSelection === 'Rock' && playerChoice === 'Scissors') ||
     (computerSelection === 'Paper' && playerChoice  === 'Rock') ||
     (computerSelection === 'Scissors' && playerChoice  === 'Paper')
  ) {
   compScore++;
   //return ('computer');
- console.log("You Lose!")
+ //return ("You Lose!");
+ console.log("You Lose");
+
  }
-
-
-  }
-
-console.log(playRound(playerChoice, computerSelection));
+ if (
+  (computerSelection === 'Rock' && playerChoice === 'Rock') ||
+  (computerSelection === 'Paper' && playerChoice  === 'Paper') ||
+  (computerSelection === 'Scissors' && playerChoice  === 'Scissors')
+ ) {
+ tieScore++;
+ console.log ("It's a Draw!");
+ }
+ return (playerScore, compScore);
+}
+console.log (playRound(playerChoice, computerSelection));
 
 //Tested output from here and prior, codes works before game set up
 
 //From here I want to loop the play round 5 times and then output the winner to the console log on each round and a final winner at the end.
-function playGame() {
-
-  //if(playerScore === 5 || computerScore === 5) {
-// winner();
-
-}
+//function playGame() {
+  //for (let i = 0; i < 10; i++){
+  //console.log(playerScore);
+  //let gameLoop = playRound(playerChoice, computerSelection);
+  //if(playerScore === 5 || compScore === 5) {
+ // if(playerScore >= 5);{
+ //   return ("Player is the Winner");
+ // }
+  //if (compScore >= 5);{
+ //   return ("Computer is the Winner");
+ // }
+ // }
+//}
+//console.log (playGame());
+//playGame();
 
 
 //function to show game winner and display final results to console log
@@ -91,4 +119,9 @@ function gameWinner() {
 
 
 }
+
+ //return (playerScore);
+ //This code should work for draw, revisit later
+ //if (playerChoice === computerSelection) {
+  //return ('tie');
 
