@@ -66,7 +66,7 @@ function gameWinner(playerScore, compScore) {
   }
   }
 
-//Function to play the 5 rounds of the game using a a for loop and declaring a final winner at the end, based on best / 5.
+//Function to play the 5 rounds of the game using for loop and declaring a final winner at the end, based on best / 5.
 function playGame() {
   for (let i = 0; i < 5; i++) {
   playRound(playerChoice, computerSelection);
