@@ -18,8 +18,9 @@ console.log("Rock-Paper-Scissors! Test your might against the Computer! Best out
 let playerScore = 0;
 let compScore = 0;
 let tieScore = 0;
-const playerChoice = getPlayerChoice();
-const computerSelection = getComputerChoice();
+let playerChoice;
+//const playerChoice = getPlayerChoice();
+let computerSelection = getComputerChoice();
 const gameInputs = ["Rock", "Paper", "Scissors"];
 
 
@@ -35,60 +36,44 @@ function getComputerChoice() {
   }  
 }
 
-
 //Player Selection
 
-function getPlayerChoice() {
-result = prompt("Choose Your Fighter!");
-return result;
-}
+//function getPlayerChoice(playerChoice) {
+//result = prompt("Choose Your Fighter!");
+//return result;
+//}
 //Function works for player play
 
 //Play Round of Game Logic works within game and grabs input from player Choice
-function playRound(playerChoice, computerSelection) {
- 
+function playRound(PlayerChoice, computerSelection) {
+
+  playerChoice = prompt("Choose Your Fighter!");
+  computerSelection = getComputerChoice();
+  
   if (
      (playerChoice === 'Rock' && computerSelection === 'Scissors') ||
      (playerChoice === 'Paper' && computerSelection === 'Rock') ||
      (playerChoice === 'Scissors' && computerSelection === 'Paper')
   ) {
-    playerScore++;
+    playerScore+=1;
+    console.log(`You Won! You chose ${playerChoice} and the Computer chose ${computerSelection}.`);
   }
   else if (
     (computerSelection === 'Rock' && playerChoice === 'Scissors') ||
     (computerSelection === 'Paper' && playerChoice  === 'Rock') ||
     (computerSelection === 'Scissors' && playerChoice  === 'Paper')
  ) {
-  compScore++;
+  compScore+=1;
+  console.log(`LOL, You lost! The Computer chose ${computerSelection} and you chose ${playerChoice}.`);
  }
  if (
   (computerSelection === 'Rock' && playerChoice === 'Rock') ||
   (computerSelection === 'Paper' && playerChoice  === 'Paper') ||
   (computerSelection === 'Scissors' && playerChoice  === 'Scissors')
  ) {
- tieScore++;
+ tieScore+=1;
+ console.log(`It's a draw, please try again! ${playerChoice} matches with ${computerSelection}.`);
  }
-
- if (
-  (compScore === 1) 
-    )
-  {
-  console.log(`Oh no, You lost! ${computerSelection} beats ${playerChoice}.`);
-  }
-  if (
-    (playerScore === 1) 
-      )
-    {
-    console.log(`You Won! ${playerChoice} beats ${computerSelection}.`);
-    }
-    if (
-      (tieScore === 1) 
-        )
-      {
-      console.log(`It's a draw, please try again! ${playerChoice} matches ${computerSelection}.`);
-      }
-
-       //console.log (`You chose ${playerChoice} and the Computer chose ${computerSelection}.`);
 }
 
 //playRound(playerChoice,computerSelection);
@@ -97,8 +82,8 @@ function playRound(playerChoice, computerSelection) {
 
 //function to show game winner and display final results to console log
 function gameWinner(playerScore, compScore) {
-  if(playerScore === compScore) {
-    console.log ("It's a draw");
+  if(playerScore === compScore){
+    console.log ("It's a draw - Play Again");
   } 
   if(playerScore > compScore){
     console.log ("Player is the Winner");
@@ -108,14 +93,11 @@ function gameWinner(playerScore, compScore) {
   }
   }
 
-
 function playGame() {
   for (let i = 1; i < 5; i++) {
-  }
   playRound(playerChoice, computerSelection);
-  gameWinner(playerScore, compScore); 
-  return gameWinner;
-  
+ }
+ gameWinner(playerScore, compScore); 
 }
 playGame();
 
