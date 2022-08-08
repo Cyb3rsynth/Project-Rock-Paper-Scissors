@@ -94,7 +94,7 @@ function gameWinner(playerScore, compScore) {
   }
 
 function playGame() {
-  for (let i = 1; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
   playRound(playerChoice, computerSelection);
  }
  gameWinner(playerScore, compScore); 
