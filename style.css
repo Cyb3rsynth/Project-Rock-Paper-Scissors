@@ -1,0 +1,123 @@
+body {
+    background: linear-gradient(to right, white, purple);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Having everything fit to the page inside the game container*/
+
+.gameContainer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 16px;
+}
+
+
+/* Adding style to my headings*/
+
+h1 {
+    color: black;
+    font-size: 70px;
+    margin: 20px;
+}
+
+h2{
+    font-size: 45px;
+    color: black;
+    margin: 20px;
+}
+
+h3 {
+    font-size: 40px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Adding style to scores*/
+
+.gamescore {
+    display: flex;
+    flex-direction: row;
+}
+.gamescore div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border: 5px solid black;
+    margin-top: 3px;
+    margin-bottom: 20px;
+    margin-right: 5px; 
+    font-weight: bolder;
+    font-size: 20px;      
+} 
+
+#roundResults {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    border: 5px solid black;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    }
+
+
+.gameoption button {
+    background: linear-gradient(to right, white, purple);
+    border: 2px solid black;
+    width: 150px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    }
+
+
+    /* Adding style to buttons*/
+
+
+#reset {
+    background: linear-gradient(to right, white, purple);
+    width: 130px;
+    height: 50px;
+    margin-top: 20px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+
+#resultsLabel {
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+#playerLabel{
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 15px;
+    color: black;
+    text-align: center;
+}
+
+#compLabel{
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 5px;
+    color: black;
+}

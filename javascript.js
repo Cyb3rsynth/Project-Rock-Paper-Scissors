@@ -7,7 +7,7 @@ let compScore = 0;
 let tieScore = 0;
 let playerChoice;
 let computerSelection = getComputerChoice();
-//const gameInputs = ["Rock", "Paper", "Scissors"];
+let computerChoices = [{choice: 'Rock', value: 0}, {choice: 'Paper', value: 1}, {choice: 'Scissors', value: 2}];
 
 //Function to get a random R/P/S choice from the computer. Using RNG formula
 function getComputerChoice() {
@@ -21,10 +21,16 @@ function getComputerChoice() {
   }  
 }
 
+function getComputer () {
+  let result = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+  return result;
+}
+
+
 //Function to play one-round of R/P/S and declare a winner or loser of the round in the console log
 function playRound(playerChoice, computerSelection) {
 
-  playerChoice = prompt("Choose Your Fighter!");
+  //playerChoice = prompt("Choose Your Fighter!");
   computerSelection = getComputerChoice();
   
     if (
