@@ -83,6 +83,7 @@ h3 {
     font-size: 20px;
     background-color: whitesmoke;
     }
+/* Adding style to buttons*/
 
 .gameOption button {
     background: rgb(5, 241, 5);
@@ -95,11 +96,10 @@ h3 {
     border-radius: 12px;
     margin-bottom: 30px;
     cursor: pointer;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
     }
 
-/* Adding style to buttons*/
-
-#reset {
+#reset  {
     background: rgb(242, 5, 5);
     width: 130px;
     height: 50px;
@@ -110,6 +110,7 @@ h3 {
     border-radius: 12px;
     border: 2px solid black;
     cursor: pointer;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
 }
 
 #ResultsLabel {

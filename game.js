@@ -79,7 +79,6 @@ function playRound(playerChoice, computerSelection) {
  isGameOver();
 }
 
-
 function checkWinner() {
   if (compScore === 5 || playerScore === 5) {
   if (compScore === playerScore){
@@ -91,9 +90,9 @@ function checkWinner() {
   }}
 
 
-function updateWinner(winner){
- finalResults.textContent = winnerResults[winner][0];
- finalResults.style.color = winnerResults[winner][0];
+function updateWinner(win){
+ finalResults.textContent = winnerResults[win][0];
+ finalResults.style.color = winnerResults[win][0];
 }
 
 const winnerResults ={
