@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
-    <script src="javascript.js" defer></script>
+    <script src="jstest.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,10 +14,10 @@
         <h2>Test Your Might</h2>
         <h3>First to 5 Wins!</h3>
 
-          <div class="gameoption">
-            <button id="0">Rock</button>
-            <button id="1">Paper</button>
-            <button id="2">Scissors</button>
+          <div class="gameOption">
+            <button id="rockBtn">Rock</button>
+            <button id="paperBtn">Paper</button>
+            <button id="scissorsBtn">Scissors</button>
           </div>
 
           <div class="labels">
@@ -28,12 +28,16 @@
 
       <div class="gamescore">
         <div id="playerScore"></div>
-        <div id="compScore"></div>
+        <div id="computerScore"></div>
       </div>
 
-      <div><span id="resultsLabel">Game Over</label></div>
+      <div><span id="RoundLabel">Round Result</label></div>
 
         <div id="roundResults"></div>
+
+      <div><span id="ResultsLabel">Game Over</label></div>
+
+        <div id="finalResults"></div>
 
      <div>
         <button id="reset">Play Again!</button>

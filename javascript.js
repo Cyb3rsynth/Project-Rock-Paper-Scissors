@@ -7,7 +7,6 @@ let compScore = 0;
 let tieScore = 0;
 let playerChoice;
 let computerSelection = getComputerChoice();
-let computerChoices = [{choice: 'Rock', value: 0}, {choice: 'Paper', value: 1}, {choice: 'Scissors', value: 2}];
 
 //Function to get a random R/P/S choice from the computer. Using RNG formula
 function getComputerChoice() {
@@ -19,11 +18,6 @@ function getComputerChoice() {
   } else {
     return ("Scissors");
   }  
-}
-
-function getComputer () {
-  let result = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-  return result;
 }
 
 
