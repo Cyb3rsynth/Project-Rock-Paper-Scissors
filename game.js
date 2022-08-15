@@ -46,7 +46,6 @@ document.querySelector("#scissorsBtn").onclick = () => {
 function playRound(playerChoice, computerSelection) {
 
   computerSelection = getComputerChoice();
-  //playerChoice = prompt("Choose Your Fighter!");
 
     if (
      (playerChoice === 'Rock' && computerSelection === 'Scissors') ||
@@ -77,48 +76,37 @@ function playRound(playerChoice, computerSelection) {
   //console.log(`It's a draw, please try again! ${playerChoice} matches with ${computerSelection}.`);
  }
  checkWinner();
-}
-
-//Function to show game winner and display final results to console log
-function gameWinner(playerScore, compScore) {
-  if(playerScore === compScore){
-    console.log ("It's a draw - Play Again");
-  } 
-  if(playerScore > compScore){
-    console.log ("Player is the Winner");
-  }
-  if(compScore > playerScore){
-    console.log ("Computer is the Winner");
-  }
-  }
-
-//Function to play the 5 rounds of the game using for loop and declaring a final winner at the end, based on best / 5.
-function playGame() {
-  for (let i = 0; i < 5; i++) {
-  playRound(playerChoice, computerSelection);
- }
-  gameWinner(playerScore, compScore); 
+ isGameOver();
 }
 
 
 function checkWinner() {
   if (compScore === 5 || playerScore === 5) {
-    if (compScore === playerScore){
-      updateWinner('tie')
+  if (compScore === playerScore){
+      updateWinner('tie');
     }else{
       let win = `${(compScore > playerScore) ? 'computer' : 'player'}`;
       updateWinner(win);
     }
-  }
-}
+  }}
+
 
 function updateWinner(winner){
-  finalResults.textContent = winnerResults[winner][0];
-  finalResults.style.color = winnerResults[winner][1];
+ finalResults.textContent = winnerResults[winner][0];
+ finalResults.style.color = winnerResults[winner][0];
 }
 
 const winnerResults ={
-  computer: ["Uh Oh, the Computer Won!", 'black'],
-  player: ["You Beat the Computer!", 'purple'],
+  computer: ["Uh Oh, the Computer Won!",'bold','black'],
+  player: ["You Beat the Computer!", 'green'],
   tie: ["It's a Tie!", 'black']
+}
+
+function isGameOver() {
+  if (playerScore > 5 || compScore > 5) {
+  playerPoints.textContent = '';
+  computerPoints.textContent = '';
+  roundResults.textContent = '';
+  winnerResults.textContent = '';
+  }
 }

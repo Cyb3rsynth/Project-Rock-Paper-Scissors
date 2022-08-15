@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, white, purple);
+    background: linear-gradient(to right, white, blue);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -55,20 +55,21 @@ h3 {
     margin-right: 5px; 
     font-weight: bolder;
     font-size: 20px;      
+    background: whitesmoke;
 } 
 
 #roundResults {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 240px;
     height: 50px;
     border: 5px solid black;
     text-align: center;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 16px;
+    background-color: whitesmoke;
     }
-
 
 #finalResults {
     display: flex;
@@ -80,11 +81,11 @@ h3 {
     text-align: center;
     font-weight: bolder;
     font-size: 20px;
+    background-color: whitesmoke;
     }
 
-
 .gameOption button {
-    background: linear-gradient(to right, white, purple);
+    background: rgb(5, 241, 5);
     border: 2px solid black;
     width: 150px;
     height: 50px;
@@ -93,14 +94,13 @@ h3 {
     color: black;
     border-radius: 12px;
     margin-bottom: 30px;
+    cursor: pointer;
     }
 
-
-    /* Adding style to buttons*/
-
+/* Adding style to buttons*/
 
 #reset {
-    background: linear-gradient(to right, white, purple);
+    background: rgb(242, 5, 5);
     width: 130px;
     height: 50px;
     margin-top: 20px;
@@ -109,6 +109,7 @@ h3 {
     font-weight: bold;
     border-radius: 12px;
     border: 2px solid black;
+    cursor: pointer;
 }
 
 #ResultsLabel {
@@ -119,7 +120,7 @@ h3 {
 }
 
 #RoundLabel {
-    font-size: 25px;
+    font-size: 18px;
     text-align: center;
     font-weight: bold;
     color: black;
