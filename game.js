@@ -31,6 +31,7 @@ function getComputerChoice() {
 }
 
 //Function to get the player choice from clicking on one of the buttons
+
 document.querySelector("#rockBtn").onclick = () => {
   playRound("Rock"); 
 }
@@ -40,7 +41,6 @@ document.querySelector("#paperBtn").onclick = () => {
 document.querySelector("#scissorsBtn").onclick = () => {
    playRound("Scissors"); 
 }
-
 
 //Function to play one-round of R/P/S and declare a winner or loser of the round in the console log
 function playRound(playerChoice, computerSelection) {
@@ -52,9 +52,14 @@ function playRound(playerChoice, computerSelection) {
      (playerChoice === 'Paper' && computerSelection === 'Rock') ||
      (playerChoice === 'Scissors' && computerSelection === 'Paper')
   ) {
+    
     playerPoints.textContent = playerScore+=1
     roundResults.textContent = `You win! ${playerChoice} beats ${computerSelection}`;
-    //console.log(`You Won! You chose ${playerChoice} and the Computer chose ${computerSelection}.`);
+
+    if (playerScore == 5) {
+      finalResults.textContent = ["You Beat the Computer!"];
+  }
+
   }
    else if (
     (computerSelection === 'Rock' && playerChoice === 'Scissors') ||
@@ -63,49 +68,43 @@ function playRound(playerChoice, computerSelection) {
  ) {
   computerPoints.textContent = compScore+=1
   roundResults.textContent = `You lose! ${computerSelection} beats ${playerChoice}`;
-  //console.log(`LOL, You lost! The Computer chose ${computerSelection} and you chose ${playerChoice}.`);
+
+  if (compScore == 5) {
+    finalResults.textContent = ["Uh Oh, the Computer Won!"];
+}
+
  }
   if (
   (computerSelection === 'Rock' && playerChoice === 'Rock') ||
   (computerSelection === 'Paper' && playerChoice  === 'Paper') ||
   (computerSelection === 'Scissors' && playerChoice  === 'Scissors')
  ) {
-  playerPoints.textContent = playerScore+=1;
-  computerPoints.textContent = compScore+=1;
+  playerPoints.textContent = playerScore+=0;
+  computerPoints.textContent = compScore+=0;
+  tieScore++;
   roundResults.textContent = "Tie!";
-  //console.log(`It's a draw, please try again! ${playerChoice} matches with ${computerSelection}.`);
+
+  if (compScore == 5 || playerScore == 5) {
+    finalResults.textContent = ["It's a Tie!"];
+}
+ 
  }
- checkWinner();
  isGameOver();
 }
 
-function checkWinner() {
-  if (compScore === 5 || playerScore === 5) {
-  if (compScore === playerScore){
-      updateWinner('tie');
-    }else{
-      let win = `${(compScore > playerScore) ? 'computer' : 'player'}`;
-      updateWinner(win);
-    }
-  }}
-
-
-function updateWinner(win){
- finalResults.textContent = winnerResults[win][0];
- finalResults.style.color = winnerResults[win][0];
-}
-
-const winnerResults ={
-  computer: ["Uh Oh, the Computer Won!",'bold','black'],
-  player: ["You Beat the Computer!", 'green'],
-  tie: ["It's a Tie!", 'black']
+const winnerResults = {
+  computer: ["Uh Oh, the Computer Won!"],
+  player: ["You Beat the Computer!"],
+  tie: ["It's a Tie!"]
 }
 
 function isGameOver() {
-  if (playerScore > 5 || compScore > 5) {
-  playerPoints.textContent = '';
-  computerPoints.textContent = '';
-  roundResults.textContent = '';
+  if (playerScore == 5 || compScore == 5) {
+  playerPoints.textContent = playerScore;
+  computerPoints.textContent = compScore;
   winnerResults.textContent = '';
+  rockBtn.disabled = true;
+  scissorsBtn.disabled = true;
+  paperBtn.disabled = true;
   }
 }
